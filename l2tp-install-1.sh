@@ -20,5 +20,8 @@ l2tp_netlink
 ebtables
 EOF
 
+# Abhängigkeiten installieren
+apt install -y iproute bridge-utils libnetfilter-conntrack3 python-dev libevent-dev ebtables python-virtualenv
+
 #reboot
 reboot
