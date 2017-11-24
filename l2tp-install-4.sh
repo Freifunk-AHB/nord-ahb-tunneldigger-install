@@ -65,19 +65,8 @@ EOF
 
 ## Tunneldiger Start Script
 cd /srv/tunneldigger
-touch start-broker.sh
+wget https://github.com/Freifunk-AHB/nord-ahb-tunneldigger-install/raw/master/srv/tunneldigger/start-broker.sh
 chmod +x start-broker.sh
-cat <<-EOF>> start-broker.sh
-#!/bin/bash
-
-WDIR=/srv/tunneldigger/broker
-VIRTUALENV_DIR=/srv/tunneldigger
-
-cd $WDIR
-source $VIRTUALENV_DIR/bin/activate
-
-$VIRTUALENV_DIR/bin/python l2tp_broker.py l2tp_broker.cfg
-EOF
 
 touch /etc/systemd/system/tunneldigger.service
 cat <<-EOF>> /etc/systemd/system/tunneldigger.service
