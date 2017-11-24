@@ -64,7 +64,7 @@ iface tunneldigger inet manual
 EOF
 
 ## Tunneldiger Start Script
-/srv/tunneldigger
+cd /srv/tunneldigger
 touch start-broker.sh
 chmod +x start-broker.sh
 cat <<-EOF>> start-broker.sh
