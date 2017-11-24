@@ -1,16 +1,6 @@
 #!/bin/bash
 
-#Abhängigkeiten installieren
-apt install -y iproute bridge-utils libnetfilter-conntrack3 python-dev libevent-dev ebtables python-virtualenv
-
-#Tunneldigger clonen und installieren
-cd /srv
-git clone git://github.com/ffrl/tunneldigger.git
-virtualenv tunneldigger
-cd /srv/tunneldigger
-source bin/activate
-pip install -r broker/requirements.txt
-cd broker/
+cd /srv/tunneldigger/broker/
 
 ##Tunneldigger cfg anlegen
 ## address = IPv4 von eth0

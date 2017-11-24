@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo su
 
 ## Start Scripte anlegen
 touch /srv/tunneldigger/broker/scripts/session-up.sh
