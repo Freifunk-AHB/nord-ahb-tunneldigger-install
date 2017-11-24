@@ -23,5 +23,9 @@ EOF
 # Abhängigkeiten installieren
 apt install -y iproute bridge-utils libnetfilter-conntrack3 python-dev libevent-dev ebtables python-virtualenv
 
+#Tunneldigger clonen und installieren
+cd /srv
+git clone git://github.com/ffrl/tunneldigger.git
+
 #reboot
 reboot
