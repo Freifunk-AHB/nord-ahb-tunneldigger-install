@@ -20,7 +20,7 @@ namespace=experiments
 check_modules=true
 
 [log]
-filename=tunneldigger-broker.log
+filename=/var/log/tunneldigger-broker.log
 verbosity=DEBUG
 log_ip_addresses=false
 
