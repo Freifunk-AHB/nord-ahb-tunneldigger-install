@@ -4,8 +4,8 @@
 cd /srv/tunneldigger/broker/scripts/
 rm session-up.sh
 rm session-pre-down.sh
-wget
-wget
+wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-up.sh
+wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-pre-down.sh
 
 
 ## iptables Regeln anlegen
