@@ -81,6 +81,23 @@ ExecStart = /srv/tunneldigger/start-broker.sh
 WantedBy = multi-user.target
 EOF
 
+##Logfiles
+mkdir /var/log/tunneldigger
+touch /var/log/tunneldigger/tunneldigger-broker.log
+cat <<-EOF>> /etc/logrotate.d/tunneldigger
+/var/log/tunneldigger/*.log
+{
+ rotate 1
+ daily
+ missingok
+ sharedscripts
+ compress
+ postrotate
+   invoke-rc.d rsyslog rotate > /dev/null
+ endscript
+}
+EOF
+
 ## Tunneldigger systemd Dienst anlegen und aktivieren
 systemctl enable tunneldigger
 systemctl start tunneldigger
