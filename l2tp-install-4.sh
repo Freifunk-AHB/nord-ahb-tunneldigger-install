@@ -37,7 +37,7 @@ EOF
 ## iptables Regeln anlegen
 touch /etc/iptables.d/500-Allow-tunneldigger
 cat <<-EOF>> /etc/iptables.d/500-Allow-tunneldigger
-# Allow Service fastd-ffnord
+# Allow Service tunneldigger
 ip46tables -A wan-input -p udp -m udp --dport 10060 -j ACCEPT -m comment --comment 'tunneldigger'
 EOF
 build-firewall
