@@ -43,25 +43,8 @@ EOF
 build-firewall
 
 # Tunneldigger interface anlegen
-touch /etc/network/interfaces.d/tunneldigger
-cat <<-EOF>> /etc/network/interfaces.d/tunneldigger
-# Tunneldigger VPN Interface
-auto tunneldigger
-iface tunneldigger inet manual
-  ## Bring up interface
-  pre-up brctl addbr $IFACE
-  pre-up ip link set dev $IFACE mtu 1364
-  pre-up ip link set $IFACE promisc on
-  up ip link set dev $IFACE up
-  post-up ebtables -A FORWARD --logical-in $IFACE -j DROP
-  post-up modprobe batman_adv
-  post-up /usr/sbin/batctl -m bat-ffnord if add $IFACE
-  # Shutdown interface
-  pre-down /usr/sbin/batctl -m bat-ffnord if del $IFACE
-  pre-down ebtables -D FORWARD --logical-in $IFACE -j DROP
-  down ip link set dev $IFACE down
-  post-down brctl delbr $IFACE
-EOF
+cd /etc/network/interfaces.d/
+wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/etc/network/interfaces.d/tunneldigger
 
 ## Tunneldiger Start Script
 cd /srv/tunneldigger
