@@ -4,8 +4,8 @@
 cd /srv/tunneldigger/broker/scripts/
 rm session-up.sh
 rm session-pre-down.sh
-wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-up.sh
-wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-pre-down.sh
+wget https://raw.githubusercontent.com/Freifunk-Nord/nord-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-up.sh
+wget https://raw.githubusercontent.com/Freifunk-AHB/nord-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-pre-down.sh
 chmod +x /srv/tunneldigger/broker/scripts/session-up.sh
 chmod +x /srv/tunneldigger/broker/scripts/session-pre-down.sh
 
@@ -19,11 +19,11 @@ build-firewall
 
 # Tunneldigger interface anlegen
 cd /etc/network/interfaces.d/
-wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/etc/network/interfaces.d/tunneldigger
+wget https://raw.githubusercontent.com/Freifunk-Nord/nord-tunneldigger-install/master/etc/network/interfaces.d/tunneldigger
 
 ## Tunneldiger Start Script
 cd /srv/tunneldigger
-wget https://github.com/Freifunk-AHB/nord-ahb-tunneldigger-install/raw/master/srv/tunneldigger/start-broker.sh
+wget https://github.com/Freifunk-Nord/nord-tunneldigger-install/raw/master/srv/tunneldigger/start-broker.sh
 chmod +x start-broker.sh
 
 touch /etc/systemd/system/tunneldigger.service
