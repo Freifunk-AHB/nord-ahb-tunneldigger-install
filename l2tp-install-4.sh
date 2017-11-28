@@ -6,7 +6,8 @@ rm session-up.sh
 rm session-pre-down.sh
 wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-up.sh
 wget https://raw.githubusercontent.com/Freifunk-AHB/nord-ahb-tunneldigger-install/master/srv/tunneldigger/broker/scripts/session-pre-down.sh
-
+chmod +x /srv/tunneldigger/broker/scripts/session-up.sh
+chmod +x /srv/tunneldigger/broker/scripts/session-pre-down.sh
 
 ## iptables Regeln anlegen
 touch /etc/iptables.d/500-Allow-tunneldigger
